@@ -9,7 +9,6 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
         int score;
         int playerSpeed = 12;
         int enemySpeed;
-        int testecommit = 1;
         int bulletSpeed;
         Random rnd = new Random();
 
@@ -164,6 +163,11 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
             isGameOver = true;
             gameTimer.Stop();
             txtScore.Text += Environment.NewLine + "Game Over!!" + Environment.NewLine + "Press Enter to try again.";
+
+        }
+
+        private void l(object sender, EventArgs e)
+        {
 
         }
     }

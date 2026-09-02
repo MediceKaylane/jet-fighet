@@ -36,101 +36,201 @@
             player = new PictureBox();
             txtScore = new Label();
             gameTimer = new System.Windows.Forms.Timer(components);
+            panel1 = new Panel();
+            label2 = new Label();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            label1 = new Label();
+            label3 = new Label();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)enemyOne).BeginInit();
             ((System.ComponentModel.ISupportInitialize)enemyTwo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)enemyThree).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bullet).BeginInit();
             ((System.ComponentModel.ISupportInitialize)player).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // enemyOne
             // 
-            this.enemyOne.Image = global::Fighter_Jet_Shooting_Game_MOO_ICT.Properties.Resources.enemy;
-            this.enemyOne.Location = new System.Drawing.Point(26, 62);
-            this.enemyOne.Name = "enemyOne";
-            this.enemyOne.Size = new System.Drawing.Size(100, 85);
-            this.enemyOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.enemyOne.TabIndex = 0;
-            this.enemyOne.TabStop = false;
+            enemyOne.Image = Properties.Resources.enemy;
+            enemyOne.Location = new Point(30, 72);
+            enemyOne.Margin = new Padding(4, 3, 4, 3);
+            enemyOne.Name = "enemyOne";
+            enemyOne.Size = new Size(100, 85);
+            enemyOne.SizeMode = PictureBoxSizeMode.AutoSize;
+            enemyOne.TabIndex = 0;
+            enemyOne.TabStop = false;
             // 
             // enemyTwo
             // 
-            this.enemyTwo.Image = global::Fighter_Jet_Shooting_Game_MOO_ICT.Properties.Resources.enemy;
-            this.enemyTwo.Location = new System.Drawing.Point(334, 62);
-            this.enemyTwo.Name = "enemyTwo";
-            this.enemyTwo.Size = new System.Drawing.Size(100, 85);
-            this.enemyTwo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.enemyTwo.TabIndex = 0;
-            this.enemyTwo.TabStop = false;
+            enemyTwo.Image = Properties.Resources.enemy;
+            enemyTwo.Location = new Point(390, 72);
+            enemyTwo.Margin = new Padding(4, 3, 4, 3);
+            enemyTwo.Name = "enemyTwo";
+            enemyTwo.Size = new Size(100, 85);
+            enemyTwo.SizeMode = PictureBoxSizeMode.AutoSize;
+            enemyTwo.TabIndex = 0;
+            enemyTwo.TabStop = false;
             // 
             // enemyThree
             // 
-            this.enemyThree.Image = global::Fighter_Jet_Shooting_Game_MOO_ICT.Properties.Resources.enemy;
-            this.enemyThree.Location = new System.Drawing.Point(664, 62);
-            this.enemyThree.Name = "enemyThree";
-            this.enemyThree.Size = new System.Drawing.Size(100, 85);
-            this.enemyThree.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.enemyThree.TabIndex = 0;
-            this.enemyThree.TabStop = false;
+            enemyThree.Image = Properties.Resources.enemy;
+            enemyThree.Location = new Point(775, 72);
+            enemyThree.Margin = new Padding(4, 3, 4, 3);
+            enemyThree.Name = "enemyThree";
+            enemyThree.Size = new Size(100, 85);
+            enemyThree.SizeMode = PictureBoxSizeMode.AutoSize;
+            enemyThree.TabIndex = 0;
+            enemyThree.TabStop = false;
             // 
             // bullet
             // 
-            this.bullet.Image = global::Fighter_Jet_Shooting_Game_MOO_ICT.Properties.Resources.bullet;
-            this.bullet.Location = new System.Drawing.Point(473, 304);
-            this.bullet.Name = "bullet";
-            this.bullet.Size = new System.Drawing.Size(7, 27);
-            this.bullet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.bullet.TabIndex = 0;
-            this.bullet.TabStop = false;
+            bullet.Image = Properties.Resources.bullet;
+            bullet.Location = new Point(552, 351);
+            bullet.Margin = new Padding(4, 3, 4, 3);
+            bullet.Name = "bullet";
+            bullet.Size = new Size(7, 27);
+            bullet.SizeMode = PictureBoxSizeMode.AutoSize;
+            bullet.TabIndex = 0;
+            bullet.TabStop = false;
             // 
             // player
             // 
-            this.player.Image = global::Fighter_Jet_Shooting_Game_MOO_ICT.Properties.Resources.player;
-            this.player.Location = new System.Drawing.Point(334, 564);
-            this.player.Name = "player";
-            this.player.Size = new System.Drawing.Size(110, 98);
-            this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.player.TabIndex = 0;
-            this.player.TabStop = false;
+            player.Image = Properties.Resources.player;
+            player.Location = new Point(390, 651);
+            player.Margin = new Padding(4, 3, 4, 3);
+            player.Name = "player";
+            player.Size = new Size(110, 98);
+            player.SizeMode = PictureBoxSizeMode.AutoSize;
+            player.TabIndex = 0;
+            player.TabStop = false;
             // 
             // txtScore
             // 
-            this.txtScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtScore.Location = new System.Drawing.Point(0, 277);
-            this.txtScore.Name = "txtScore";
-            this.txtScore.Size = new System.Drawing.Size(798, 150);
-            this.txtScore.TabIndex = 1;
-            this.txtScore.Text = "0";
-            this.txtScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            txtScore.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtScore.Location = new Point(13, 314);
+            txtScore.Margin = new Padding(4, 0, 4, 0);
+            txtScore.Name = "txtScore";
+            txtScore.Size = new Size(931, 173);
+            txtScore.TabIndex = 1;
+            txtScore.Text = "0";
+            txtScore.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // gameTimer
             // 
-            this.gameTimer.Interval = 20;
-            this.gameTimer.Tick += new System.EventHandler(this.mainGameTimerEvent);
+            gameTimer.Interval = 20;
+            gameTimer.Tick += mainGameTimerEvent;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.DarkCyan;
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(panel4);
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(panel2);
+            panel1.Controls.Add(label2);
+            panel1.Location = new Point(59, 63);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(801, 660);
+            panel1.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 40F);
+            label2.ForeColor = Color.FromArgb(192, 255, 255);
+            label2.Location = new Point(92, 66);
+            label2.Name = "label2";
+            label2.Size = new Size(602, 72);
+            label2.TabIndex = 1;
+            label2.Text = "FIGHTER JET SHOOTING";
+            // 
+            // panel2
+            // 
+            panel2.BorderStyle = BorderStyle.Fixed3D;
+            panel2.Location = new Point(317, 266);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(169, 217);
+            panel2.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            panel3.BorderStyle = BorderStyle.Fixed3D;
+            panel3.Location = new Point(77, 266);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(166, 217);
+            panel3.TabIndex = 3;
+            // 
+            // panel4
+            // 
+            panel4.BorderStyle = BorderStyle.Fixed3D;
+            panel4.Location = new Point(552, 266);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(169, 217);
+            panel4.TabIndex = 3;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.ForeColor = Color.FromArgb(192, 255, 255);
+            label1.Location = new Point(123, 225);
+            label1.Name = "label1";
+            label1.Size = new Size(66, 15);
+            label1.TabIndex = 0;
+            label1.Text = "CENÁRIO 1";
+            label1.Click += l;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.ForeColor = Color.FromArgb(192, 255, 255);
+            label3.Location = new Point(365, 225);
+            label3.Name = "label3";
+            label3.Size = new Size(66, 15);
+            label3.TabIndex = 4;
+            label3.Text = "CENÁRIO 2";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.ForeColor = Color.FromArgb(192, 255, 255);
+            label4.Location = new Point(600, 225);
+            label4.Name = "label4";
+            label4.Size = new Size(66, 15);
+            label4.TabIndex = 5;
+            label4.Text = "CENÁRIO 3";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(800, 674);
-            this.Controls.Add(this.player);
-            this.Controls.Add(this.bullet);
-            this.Controls.Add(this.enemyThree);
-            this.Controls.Add(this.enemyTwo);
-            this.Controls.Add(this.enemyOne);
-            this.Controls.Add(this.txtScore);
-            this.Name = "Form1";
-            this.Text = "Fighet Jet Shooting Game MOOI CT";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);
-            ((System.ComponentModel.ISupportInitialize)(this.enemyOne)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemyTwo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemyThree)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bullet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(128, 255, 255);
+            ClientSize = new Size(933, 778);
+            Controls.Add(panel1);
+            Controls.Add(player);
+            Controls.Add(bullet);
+            Controls.Add(enemyThree);
+            Controls.Add(enemyTwo);
+            Controls.Add(enemyOne);
+            Controls.Add(txtScore);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "Form1";
+            Text = "Fighet Jet Shooting Game MOOI CT";
+            KeyDown += keyisdown;
+            KeyUp += keyisup;
+            ((System.ComponentModel.ISupportInitialize)enemyOne).EndInit();
+            ((System.ComponentModel.ISupportInitialize)enemyTwo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)enemyThree).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bullet).EndInit();
+            ((System.ComponentModel.ISupportInitialize)player).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
 
 
         }
@@ -144,6 +244,13 @@
         private System.Windows.Forms.PictureBox player;
         private System.Windows.Forms.Label txtScore;
         private System.Windows.Forms.Timer gameTimer;
-
+        private Panel panel1;
+        private Label label2;
+        private Label label4;
+        private Label label3;
+        private Label label1;
+        private Panel panel4;
+        private Panel panel3;
+        private Panel panel2;
     }
 }
