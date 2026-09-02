@@ -9,6 +9,7 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
         int score;
         int playerSpeed = 12;
         int enemySpeed;
+        int testecommit = 1;
         int bulletSpeed;
         Random rnd = new Random();
 
