@@ -174,13 +174,14 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
 
-            Form2 jogo = new Form2();
+        private void panel3_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+            panelJogo.Visible = true;
 
-            jogo.Show();
-
-            this.Hide();
-
+            resetGame();
         }
     }
 }
