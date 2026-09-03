@@ -12,9 +12,18 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
         int bulletSpeed;
         Random rnd = new Random();
 
+
         public Form1()
         {
             InitializeComponent();
+
+            player.Visible = false;
+            enemyOne.Visible = false;
+            enemyTwo.Visible = false;
+            enemyThree.Visible = false;
+            bullet.Visible = false;
+            txtScore.Visible = false;
+
             resetGame();
         }
 
@@ -162,7 +171,7 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
         {
             isGameOver = true;
             gameTimer.Stop();
-            txtScore.Text += Environment.NewLine + "Game Over!!" + Environment.NewLine + "Press Enter to try again.";
+            txtScore.Text += Environment.NewLine + "Você perdeu!" + Environment.NewLine + "Pressione Enter para tentar de novo";
 
         }
 
@@ -176,10 +185,83 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
 
         }
 
-        private void panel3_Click(object sender, EventArgs e)
+
+        private void cenario1click(object sender, EventArgs e)
         {
-            panel3.Visible = false;
-            panelJogo.Visible = true;
+            label2titulo.Visible = false;
+            labelEscolhacenario.Visible = false;
+            label1cenario1.Visible = false;
+            panel3mar.Visible = false;
+            panel2floresta.Visible = false;
+            panel4cidade.Visible = false;
+            panelprincipal.Visible = false;
+
+
+            this.BackgroundImage = Properties.Resources.mar;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+
+            player.Visible = true;
+            enemyOne.Visible = true;
+            enemyTwo.Visible = true;
+            enemyThree.Visible = true;
+            bullet.Visible = true;
+            txtScore.Visible = true;
+
+
+
+            resetGame();
+
+        }
+
+        private void cenario2click(object sender, EventArgs e)
+        {
+            label2titulo.Visible = false;
+            labelEscolhacenario.Visible = false;
+            label1cenario1.Visible = false;
+            panel3mar.Visible = false;
+            panel2floresta.Visible = false;
+            panel4cidade.Visible = false;
+            panelprincipal.Visible = false;
+
+            this.BackgroundImage = Properties.Resources.floresta;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+
+            player.Visible = true;
+            enemyOne.Visible = true;
+            enemyTwo.Visible = true;
+            enemyThree.Visible = true;
+            bullet.Visible = true;
+            txtScore.Visible = true;
+
+            resetGame();
+
+        }
+
+        private void panel2floresta_Click(object sender, EventArgs e)
+        {
+            // Encaminha o clique para o handler existente cenario2click
+            cenario2click(sender, e);
+        }
+
+        private void cenario3click(object sender, EventArgs e)
+        {
+            label2titulo.Visible = false;
+            labelEscolhacenario.Visible = false;
+            label1cenario1.Visible = false;
+            panel3mar.Visible = false;
+            panel2floresta.Visible = false;
+            panel4cidade.Visible = false;
+            panelprincipal.Visible = false;
+
+            this.BackgroundImage = Properties.Resources.cidade3;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+
+            player.Visible = true;
+            enemyOne.Visible = true;
+            enemyTwo.Visible = true;
+            enemyThree.Visible = true;
+            bullet.Visible = true;
+            txtScore.Visible = true;
 
             resetGame();
         }
