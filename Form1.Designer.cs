@@ -38,6 +38,8 @@
             txtScore = new Label();
             gameTimer = new System.Windows.Forms.Timer(components);
             panelprincipal = new Panel();
+            aviaoAmigo = new PictureBox();
+            balaAmigo = new PictureBox();
             labelEscolhacenario = new Label();
             label4cenario3 = new Label();
             label3cenario2 = new Label();
@@ -53,6 +55,8 @@
             ((System.ComponentModel.ISupportInitialize)bullet).BeginInit();
             ((System.ComponentModel.ISupportInitialize)player).BeginInit();
             panelprincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)aviaoAmigo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)balaAmigo).BeginInit();
             panelMAR.SuspendLayout();
             SuspendLayout();
             // 
@@ -136,6 +140,8 @@
             // panelprincipal
             // 
             panelprincipal.BackColor = Color.DarkCyan;
+            panelprincipal.Controls.Add(aviaoAmigo);
+            panelprincipal.Controls.Add(balaAmigo);
             panelprincipal.Controls.Add(labelEscolhacenario);
             panelprincipal.Controls.Add(label4cenario3);
             panelprincipal.Controls.Add(label3cenario2);
@@ -148,6 +154,29 @@
             panelprincipal.Name = "panelprincipal";
             panelprincipal.Size = new Size(873, 721);
             panelprincipal.TabIndex = 2;
+            // 
+            // aviaoAmigo
+            // 
+            aviaoAmigo.BackColor = Color.Transparent;
+            aviaoAmigo.Image = Properties.Resources.player;
+            aviaoAmigo.Location = new Point(507, 623);
+            aviaoAmigo.Margin = new Padding(4, 3, 4, 3);
+            aviaoAmigo.Name = "aviaoAmigo";
+            aviaoAmigo.Size = new Size(110, 98);
+            aviaoAmigo.SizeMode = PictureBoxSizeMode.AutoSize;
+            aviaoAmigo.TabIndex = 8;
+            aviaoAmigo.TabStop = false;
+            // 
+            // balaAmigo
+            // 
+            balaAmigo.Image = Properties.Resources.bullet;
+            balaAmigo.Location = new Point(626, 353);
+            balaAmigo.Margin = new Padding(4, 3, 4, 3);
+            balaAmigo.Name = "balaAmigo";
+            balaAmigo.Size = new Size(7, 27);
+            balaAmigo.SizeMode = PictureBoxSizeMode.AutoSize;
+            balaAmigo.TabIndex = 8;
+            balaAmigo.TabStop = false;
             // 
             // labelEscolhacenario
             // 
@@ -270,6 +299,8 @@
             ((System.ComponentModel.ISupportInitialize)player).EndInit();
             panelprincipal.ResumeLayout(false);
             panelprincipal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)aviaoAmigo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)balaAmigo).EndInit();
             panelMAR.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -296,5 +327,7 @@
         private Panel panel2floresta;
         private Label label2titulo;
         private Panel panelMAR;
+        private PictureBox aviaoAmigo;
+        private PictureBox balaAmigo;
     }
 }

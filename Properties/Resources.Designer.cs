@@ -90,6 +90,15 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT.Properties {
             }
         }
 
+        internal static System.Drawing.Bitmap aviaoAmigo
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("aviaoAmigo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
         internal static System.Drawing.Bitmap mar
         {
             get
