@@ -89,5 +89,32 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+
+        internal static System.Drawing.Bitmap mar
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("mar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        internal static System.Drawing.Bitmap floresta
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("floresta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        internal static System.Drawing.Bitmap cidade3
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("cidade", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

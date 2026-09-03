@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             enemyOne = new PictureBox();
             enemyTwo = new PictureBox();
             enemyThree = new PictureBox();
@@ -37,13 +38,14 @@
             txtScore = new Label();
             gameTimer = new System.Windows.Forms.Timer(components);
             panel1 = new Panel();
-            label2 = new Label();
-            panel2 = new Panel();
-            panel3 = new Panel();
-            panel4 = new Panel();
-            label1 = new Label();
-            label3 = new Label();
+            label5 = new Label();
             label4 = new Label();
+            label3 = new Label();
+            label1 = new Label();
+            panel4 = new Panel();
+            panel3 = new Panel();
+            panel2 = new Panel();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)enemyOne).BeginInit();
             ((System.ComponentModel.ISupportInitialize)enemyTwo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)enemyThree).BeginInit();
@@ -126,6 +128,7 @@
             // panel1
             // 
             panel1.BackColor = Color.DarkCyan;
+            panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label1);
@@ -138,71 +141,89 @@
             panel1.Size = new Size(801, 660);
             panel1.TabIndex = 2;
             // 
-            // label2
+            // label5
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 40F);
-            label2.ForeColor = Color.FromArgb(192, 255, 255);
-            label2.Location = new Point(92, 66);
-            label2.Name = "label2";
-            label2.Size = new Size(602, 72);
-            label2.TabIndex = 1;
-            label2.Text = "FIGHTER JET SHOOTING";
-            // 
-            // panel2
-            // 
-            panel2.BorderStyle = BorderStyle.Fixed3D;
-            panel2.Location = new Point(317, 266);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(169, 217);
-            panel2.TabIndex = 2;
-            // 
-            // panel3
-            // 
-            panel3.BorderStyle = BorderStyle.Fixed3D;
-            panel3.Location = new Point(77, 266);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(166, 217);
-            panel3.TabIndex = 3;
-            // 
-            // panel4
-            // 
-            panel4.BorderStyle = BorderStyle.Fixed3D;
-            panel4.Location = new Point(552, 266);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(169, 217);
-            panel4.TabIndex = 3;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.ForeColor = Color.FromArgb(192, 255, 255);
-            label1.Location = new Point(123, 225);
-            label1.Name = "label1";
-            label1.Size = new Size(66, 15);
-            label1.TabIndex = 0;
-            label1.Text = "CENÁRIO 1";
-            label1.Click += l;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.ForeColor = Color.FromArgb(192, 255, 255);
-            label3.Location = new Point(365, 225);
-            label3.Name = "label3";
-            label3.Size = new Size(66, 15);
-            label3.TabIndex = 4;
-            label3.Text = "CENÁRIO 2";
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 23F);
+            label5.ForeColor = Color.FromArgb(192, 255, 255);
+            label5.Location = new Point(126, 176);
+            label5.Name = "label5";
+            label5.Size = new Size(518, 42);
+            label5.TabIndex = 6;
+            label5.Text = "Escolha um cenário para sua batalha";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.ForeColor = Color.FromArgb(192, 255, 255);
-            label4.Location = new Point(600, 225);
+            label4.Font = new Font("Segoe UI", 15F);
+            label4.ForeColor = Color.FromArgb(255, 255, 192);
+            label4.Location = new Point(584, 278);
             label4.Name = "label4";
-            label4.Size = new Size(66, 15);
+            label4.Size = new Size(110, 28);
             label4.TabIndex = 5;
             label4.Text = "CENÁRIO 3";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 15F);
+            label3.ForeColor = Color.FromArgb(255, 255, 192);
+            label3.Location = new Point(346, 278);
+            label3.Name = "label3";
+            label3.Size = new Size(110, 28);
+            label3.TabIndex = 4;
+            label3.Text = "CENÁRIO 2";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F);
+            label1.ForeColor = Color.FromArgb(255, 255, 192);
+            label1.Location = new Point(117, 278);
+            label1.Name = "label1";
+            label1.Size = new Size(110, 28);
+            label1.TabIndex = 0;
+            label1.Text = "CENÁRIO 1";
+            label1.Click += l;
+            // 
+            // panel4
+            // 
+            panel4.BackgroundImage = (Image)resources.GetObject("panel4.BackgroundImage");
+            panel4.BorderStyle = BorderStyle.Fixed3D;
+            panel4.Location = new Point(552, 321);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(177, 261);
+            panel4.TabIndex = 3;
+            // 
+            // panel3
+            // 
+            panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
+            panel3.BorderStyle = BorderStyle.Fixed3D;
+            panel3.Location = new Point(77, 321);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(198, 261);
+            panel3.TabIndex = 3;
+            panel3.Paint += panel3_Paint;
+            // 
+            // panel2
+            // 
+            panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.BorderStyle = BorderStyle.Fixed3D;
+            panel2.Location = new Point(317, 321);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(183, 261);
+            panel2.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Stencil", 39.12F);
+            label2.ForeColor = Color.FromArgb(255, 255, 192);
+            label2.Location = new Point(78, 56);
+            label2.Name = "label2";
+            label2.Size = new Size(625, 63);
+            label2.TabIndex = 1;
+            label2.Text = "FIGHTER JET SHOOTING";
             // 
             // Form1
             // 
@@ -252,5 +273,6 @@
         private Panel panel4;
         private Panel panel3;
         private Panel panel2;
+        private Label label5;
     }
 }
