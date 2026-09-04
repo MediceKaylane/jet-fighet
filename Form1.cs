@@ -93,6 +93,7 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
             }
 
 
+
             // Colisão da bala do jogador com os inimigos
 
             if (bullet.Bounds.IntersectsWith(enemyOne.Bounds))
