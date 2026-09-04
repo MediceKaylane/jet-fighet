@@ -133,6 +133,34 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
                 shooting = false;
             }
 
+            // Colisão da bala do avião amigo com os inimigos
+            if (atirandoAmigo == true)
+            {
+                if (balaAmigo.Bounds.IntersectsWith(enemyOne.Bounds))
+                {
+                    score += 1;
+                    enemyOne.Top = -450;
+                    enemyOne.Left = rnd.Next(20, 600);
+                    atirandoAmigo = false;
+                }
+
+                if (balaAmigo.Bounds.IntersectsWith(enemyTwo.Bounds))
+                {
+                    score += 1;
+                    enemyTwo.Top = -650;
+                    enemyTwo.Left = rnd.Next(20, 600);
+                    atirandoAmigo = false;
+                }
+
+                if (balaAmigo.Bounds.IntersectsWith(enemyThree.Bounds))
+                {
+                    score += 1;
+                    enemyThree.Top = -750;
+                    enemyThree.Left = rnd.Next(20, 600);
+                    atirandoAmigo = false;
+                }
+            }
+
 
             // AUMENTO DA VELOCIDADE DOS INIMIGOS
 
