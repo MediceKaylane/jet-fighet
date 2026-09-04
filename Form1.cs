@@ -7,7 +7,7 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
 
         bool goLeft, goRight, shooting, isGameOver;
         bool atirandoAmigo;
-        int velocidadeAviaoAmigo = 30;
+        int velocidadeAviaoAmigo = 20;
         bool aviaoIndoDireita = true;
         bool cenario2Ativo = false;
 
@@ -361,7 +361,7 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
 
             aviaoAmigo.Visible = true;
             aviaoAmigo.Left = 400;
-            aviaoAmigo.Top = 600;
+            aviaoAmigo.Top = 500;
             aviaoAmigo.BringToFront();
 
             this.Controls.Add(balaAmigo);
