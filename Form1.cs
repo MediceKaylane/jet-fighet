@@ -6,6 +6,7 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
     {
 
         bool goLeft, goRight, shooting, isGameOver;
+        bool atirandoAmigo;
         bool cenario2Ativo = false;
 
         int score;
@@ -16,7 +17,7 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
 
         Random rnd = new Random();
 
-        
+
 
 
         public Form1()
@@ -33,7 +34,7 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
             aviaoAmigo.Visible = false;
             balaAmigo.Visible = false;
 
-            
+
 
 
 
@@ -92,6 +93,18 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
                 shooting = false;
             }
 
+            // Tiro do avião amigo
+
+            if (atirandoAmigo == true)
+            {
+                balaAmigo.Top -= velocidadeBalaAmigo;
+            }
+
+            if (balaAmigo.Top < -30)
+            {
+                atirandoAmigo = false;
+            }
+
 
             // Colisão da bala do jogador com os inimigos
 
@@ -132,11 +145,11 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
                 enemySpeed = 15;
             }
 
-            
+
         }
 
 
-        
+
 
         private void keyisdown(object sender, KeyEventArgs e)
         {
@@ -215,7 +228,7 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
 
             gameTimer.Stop();
 
-            
+
 
             txtScore.Text += Environment.NewLine +
                 "Você perdeu!" +
@@ -261,7 +274,7 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
 
 
 
-           
+
 
 
             resetGame();
@@ -305,6 +318,7 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
             balaAmigo.Left = aviaoAmigo.Left + (aviaoAmigo.Width / 2);
             balaAmigo.Top = aviaoAmigo.Top - 20;
 
+            timerBalaAmigo.Start();
             resetGame();
         }
 
@@ -315,6 +329,7 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
         private void panel2floresta_Click(object sender, EventArgs e)
         {
             cenario2click(sender, e);
+            panelMAR.SendToBack();
         }
 
 
@@ -348,11 +363,23 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
 
             aviaoAmigo.Visible = false;
             balaAmigo.Visible = false;
+            timerBalaAmigo.Stop();
 
-           
+
 
 
             resetGame();
+        }
+
+        private void timerBalaAmigo_Tick(object sender, EventArgs e)
+        {
+            balaAmigo.Left = aviaoAmigo.Left + (aviaoAmigo.Width / 2);
+            balaAmigo.Top = aviaoAmigo.Top - 20;
+
+            balaAmigo.BringToFront();
+
+            atirandoAmigo = true;
+           
         }
     }
 }
