@@ -32,13 +32,10 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
             enemyThree.Visible = false;
             bullet.Visible = false;
             txtScore.Visible = false;
+            
 
             aviaoAmigo.Visible = false;
             balaAmigo.Visible = false;
-
-
-
-
 
             resetGame();
         }
