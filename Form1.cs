@@ -300,30 +300,21 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
             aviaoAmigo.Top = 600;
             aviaoAmigo.BringToFront();
 
-            aviaoAmigo.Visible = true;
-            aviaoAmigo.BringToFront();
-
-            balaAmigo.Visible = false;
+            this.Controls.Add(balaAmigo);
+            balaAmigo.Visible = true;
+            balaAmigo.Left = aviaoAmigo.Left + (aviaoAmigo.Width / 2);
+            balaAmigo.Top = aviaoAmigo.Top - 20;
 
             resetGame();
         }
 
 
+
+
+
         private void panel2floresta_Click(object sender, EventArgs e)
         {
             cenario2click(sender, e);
-        }
-
-
-        private void timerAviaoAmigo_Tick(object sender, EventArgs e)
-        {
-            if (cenario2Ativo)
-            {
-                balaAmigo.Visible = true;
-
-                balaAmigo.Left = aviaoAmigo.Left + (aviaoAmigo.Width / 2);
-                balaAmigo.Top = aviaoAmigo.Top - 20;
-            }
         }
 
 

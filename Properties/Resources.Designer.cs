@@ -99,6 +99,15 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT.Properties {
             }
         }
 
+        internal static System.Drawing.Bitmap balaAmigo
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("balaAmigo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
         internal static System.Drawing.Bitmap mar
         {
             get
