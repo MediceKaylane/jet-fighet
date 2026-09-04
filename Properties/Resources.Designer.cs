@@ -134,5 +134,14 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+
+        internal static System.Drawing.Bitmap granada
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("granda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
