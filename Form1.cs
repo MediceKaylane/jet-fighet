@@ -338,7 +338,7 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
             this.Controls.Add(aviaoAmigo);
 
             aviaoAmigo.Visible = true;
-            aviaoAmigo.Left = 700;
+            aviaoAmigo.Left = 400;
             aviaoAmigo.Top = 600;
             aviaoAmigo.BringToFront();
 
