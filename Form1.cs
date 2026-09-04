@@ -7,6 +7,8 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
 
         bool goLeft, goRight, shooting, isGameOver;
         bool atirandoAmigo;
+        int velocidadeAviaoAmigo = 30;
+        bool aviaoIndoDireita = true;
         bool cenario2Ativo = false;
 
         int score;
@@ -73,7 +75,27 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
             }
 
             // player movement logic ends
+            if (cenario2Ativo == true)
+            {
+                if (aviaoIndoDireita == true)
+                {
+                    aviaoAmigo.Left += velocidadeAviaoAmigo;
+                }
+                else
+                {
+                    aviaoAmigo.Left -= velocidadeAviaoAmigo;
+                }
 
+                if (aviaoAmigo.Left > 720)
+                {
+                    aviaoIndoDireita = false;
+                }
+
+                if (aviaoAmigo.Left < 0)
+                {
+                    aviaoIndoDireita = true;
+                }
+            }
 
             // Tiro do jogador
 
