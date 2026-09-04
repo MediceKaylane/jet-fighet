@@ -139,7 +139,7 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT.Properties {
         {
             get
             {
-                object obj = ResourceManager.GetObject("granda", resourceCulture);
+                object obj = ResourceManager.GetObject("granada", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
