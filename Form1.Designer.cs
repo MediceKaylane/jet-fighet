@@ -38,8 +38,9 @@
             txtScore = new Label();
             gameTimer = new System.Windows.Forms.Timer(components);
             panelprincipal = new Panel();
-            aviaoAmigo = new PictureBox();
+            granada = new PictureBox();
             balaAmigo = new PictureBox();
+            aviaoAmigo = new PictureBox();
             labelEscolhacenario = new Label();
             label4cenario3 = new Label();
             label3cenario2 = new Label();
@@ -56,8 +57,9 @@
             ((System.ComponentModel.ISupportInitialize)bullet).BeginInit();
             ((System.ComponentModel.ISupportInitialize)player).BeginInit();
             panelprincipal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)aviaoAmigo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)granada).BeginInit();
             ((System.ComponentModel.ISupportInitialize)balaAmigo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)aviaoAmigo).BeginInit();
             panelMAR.SuspendLayout();
             SuspendLayout();
             // 
@@ -141,6 +143,7 @@
             // panelprincipal
             // 
             panelprincipal.BackColor = Color.DarkCyan;
+            panelprincipal.Controls.Add(granada);
             panelprincipal.Controls.Add(balaAmigo);
             panelprincipal.Controls.Add(aviaoAmigo);
             panelprincipal.Controls.Add(labelEscolhacenario);
@@ -157,17 +160,16 @@
             panelprincipal.Size = new Size(998, 961);
             panelprincipal.TabIndex = 2;
             // 
-            // aviaoAmigo
+            // granada
             // 
-            aviaoAmigo.BackColor = Color.Transparent;
-            aviaoAmigo.Image = Properties.Resources.player;
-            aviaoAmigo.Location = new Point(579, 831);
-            aviaoAmigo.Margin = new Padding(5, 4, 5, 4);
-            aviaoAmigo.Name = "aviaoAmigo";
-            aviaoAmigo.Size = new Size(110, 98);
-            aviaoAmigo.SizeMode = PictureBoxSizeMode.AutoSize;
-            aviaoAmigo.TabIndex = 8;
-            aviaoAmigo.TabStop = false;
+            granada.BackColor = Color.Transparent;
+            granada.Image = Properties.Resources.granada;
+            granada.Location = new Point(45, 227);
+            granada.Name = "granada";
+            granada.Size = new Size(62, 72);
+            granada.SizeMode = PictureBoxSizeMode.Zoom;
+            granada.TabIndex = 9;
+            granada.TabStop = false;
             // 
             // balaAmigo
             // 
@@ -179,6 +181,18 @@
             balaAmigo.SizeMode = PictureBoxSizeMode.AutoSize;
             balaAmigo.TabIndex = 8;
             balaAmigo.TabStop = false;
+            // 
+            // aviaoAmigo
+            // 
+            aviaoAmigo.BackColor = Color.Transparent;
+            aviaoAmigo.Image = Properties.Resources.player;
+            aviaoAmigo.Location = new Point(579, 831);
+            aviaoAmigo.Margin = new Padding(5, 4, 5, 4);
+            aviaoAmigo.Name = "aviaoAmigo";
+            aviaoAmigo.Size = new Size(110, 98);
+            aviaoAmigo.SizeMode = PictureBoxSizeMode.AutoSize;
+            aviaoAmigo.TabIndex = 8;
+            aviaoAmigo.TabStop = false;
             // 
             // labelEscolhacenario
             // 
@@ -310,8 +324,9 @@
             ((System.ComponentModel.ISupportInitialize)player).EndInit();
             panelprincipal.ResumeLayout(false);
             panelprincipal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)aviaoAmigo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)granada).EndInit();
             ((System.ComponentModel.ISupportInitialize)balaAmigo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)aviaoAmigo).EndInit();
             panelMAR.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -341,5 +356,6 @@
         private PictureBox aviaoAmigo;
         private PictureBox balaAmigo;
         private System.Windows.Forms.Timer timerBalaAmigo;
+        private PictureBox granada;
     }
 }

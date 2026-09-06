@@ -10,7 +10,9 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
         int velocidadeAviaoAmigo = 20;
         bool aviaoIndoDireita = true;
         bool cenario2Ativo = false;
+        bool cenario3Ativo = false;
 
+        int velocidadeGranada = 8;
         int score;
         int playerSpeed = 12;
         int enemySpeed;
@@ -25,6 +27,9 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
         public Form1()
         {
             InitializeComponent();
+            this.Controls.Add(player);
+
+            player.BringToFront();
 
             player.Visible = false;
             enemyOne.Visible = false;
@@ -32,7 +37,8 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
             enemyThree.Visible = false;
             bullet.Visible = false;
             txtScore.Visible = false;
-            
+            granada.Visible = false;
+
 
             aviaoAmigo.Visible = false;
             balaAmigo.Visible = false;
@@ -53,7 +59,7 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
             enemyThree.Top += enemySpeed;
 
 
-            if (enemyOne.Top > 710 || enemyTwo.Top > 710 || enemyThree.Top > 710)
+            if (enemyOne.Top > 710 || enemyTwo.Top > 710 || enemyThree.Top > 710 || granada.Bounds.IntersectsWith(player.Bounds))
             {
                 gameOver();
             }
@@ -91,6 +97,26 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
                 if (aviaoAmigo.Left < 0)
                 {
                     aviaoIndoDireita = true;
+                }
+            }
+
+            //cenario 3
+
+            if (cenario3Ativo == true)
+            {
+
+                granada.Top += velocidadeGranada;
+                this.Text = $"Granada: {granada.Bounds} | Player: {player.Bounds}";
+
+                if (granada.Bounds.IntersectsWith(player.Bounds))
+                {
+                    gameOver();
+                }
+
+                if (granada.Top > 710)
+                {
+                    granada.Top = -50;
+                    granada.Left = rnd.Next(20, 600);
                 }
             }
 
@@ -312,6 +338,8 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
             this.BackgroundImage = Properties.Resources.mar;
             this.BackgroundImageLayout = ImageLayout.Stretch;
 
+            cenario3Ativo = false;
+            granada.Visible = false;
 
             player.Visible = true;
             enemyOne.Visible = true;
@@ -343,6 +371,9 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
 
             this.BackgroundImage = Properties.Resources.floresta;
             this.BackgroundImageLayout = ImageLayout.Stretch;
+
+            cenario3Ativo = false;
+            granada.Visible = false;
 
             player.Visible = true;
             enemyOne.Visible = true;
@@ -376,6 +407,7 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
 
         private void panel2floresta_Click(object sender, EventArgs e)
         {
+            
             cenario2click(sender, e);
             panelMAR.SendToBack();
         }
@@ -384,6 +416,16 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
 
         private void cenario3click(object sender, EventArgs e)
         {
+
+            cenario3Ativo = true;
+
+            this.Controls.Add(granada);
+            granada.Visible = true;
+            granada.Image = Properties.Resources.granada;
+            granada.Left = rnd.Next(20, 600);
+            granada.Top = -50;
+            granada.BringToFront();
+
             label2titulo.Visible = false;
             labelEscolhacenario.Visible = false;
             label1cenario1.Visible = false;
@@ -391,11 +433,10 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
             panel2floresta.Visible = false;
             panel4cidade.Visible = false;
             panelprincipal.Visible = false;
-
+            panelMAR.Visible = false;
 
             this.BackgroundImage = Properties.Resources.cidade3;
             this.BackgroundImageLayout = ImageLayout.Stretch;
-
 
             player.Visible = true;
             enemyOne.Visible = true;
@@ -404,17 +445,18 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
             bullet.Visible = true;
             txtScore.Visible = true;
 
-
             // Desativa avião amigo
-
             cenario2Ativo = false;
 
             aviaoAmigo.Visible = false;
+            aviaoAmigo.Left = -1000;
+            aviaoAmigo.Top = -1000;
+
             balaAmigo.Visible = false;
+            balaAmigo.Left = -1000;
+            balaAmigo.Top = -1000;
+
             timerBalaAmigo.Stop();
-
-
-
 
             resetGame();
         }
