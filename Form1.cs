@@ -18,6 +18,7 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
         int enemySpeed;
         int bulletSpeed;
         int velocidadeBalaAmigo = 20;
+        int cenarioAtual = 0; // 1, 2 ou 3
 
         Random rnd = new Random();
 
@@ -28,6 +29,9 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
         {
             InitializeComponent();
             this.Controls.Add(player);
+            this.Controls.Add(enemyOne);
+            this.Controls.Add(enemyTwo);
+            this.Controls.Add(enemyThree);
 
             player.BringToFront();
 
@@ -299,15 +303,14 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
         private void gameOver()
         {
             isGameOver = true;
-
             gameTimer.Stop();
 
+            labelPlacarFinal.Text = "Pontuação: " + score.ToString();
 
-
-            txtScore.Text += Environment.NewLine +
-                "Você perdeu!" +
-                Environment.NewLine +
-                "Pressione Enter para tentar de novo";
+            this.Controls.Add(panelGameOver);
+            panelGameOver.BackColor = Color.DarkCyan;
+            panelGameOver.Visible = true;
+            panelGameOver.BringToFront();
         }
 
 
@@ -333,6 +336,7 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
             panel2floresta.Visible = false;
             panel4cidade.Visible = false;
             panelprincipal.Visible = false;
+            panelMAR.Visible = false;
 
 
             this.BackgroundImage = Properties.Resources.mar;
@@ -368,6 +372,7 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
             panel2floresta.Visible = false;
             panel4cidade.Visible = false;
             panelprincipal.Visible = false;
+            panelMAR.Visible = false;
 
             this.BackgroundImage = Properties.Resources.floresta;
             this.BackgroundImageLayout = ImageLayout.Stretch;
@@ -407,7 +412,7 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
 
         private void panel2floresta_Click(object sender, EventArgs e)
         {
-            
+
             cenario2click(sender, e);
             panelMAR.SendToBack();
         }
@@ -469,7 +474,51 @@ namespace Fighter_Jet_Shooting_Game_MOO_ICT
             balaAmigo.BringToFront();
 
             atirandoAmigo = true;
-           
+
+        }
+
+        private void btnJogarNovamente_Click(object sender, EventArgs e)
+        {
+
+            panelGameOver.Visible = false;
+            isGameOver = false;
+
+            resetGame();
+
+            this.ActiveControl = null;
+            this.Focus();
+        }
+
+        private void btnVoltarMenu_Click(object sender, EventArgs e)
+        {
+            panelGameOver.Visible = false;
+            isGameOver = false;
+
+            cenario2Ativo = false;
+            cenario3Ativo = false;
+            timerBalaAmigo.Stop();
+
+            player.Visible = false;
+            enemyOne.Visible = false;
+            enemyTwo.Visible = false;
+            enemyThree.Visible = false;
+            bullet.Visible = false;
+            txtScore.Visible = false;
+            granada.Visible = false;
+            aviaoAmigo.Visible = false;
+            balaAmigo.Visible = false;
+
+            panelMAR.Visible = true;
+            panelprincipal.Visible = true;
+            label2titulo.Visible = true;
+            labelEscolhacenario.Visible = true;
+            label1cenario1.Visible = true;
+            panel3mar.Visible = true;
+            panel2floresta.Visible = true;
+            panel4cidade.Visible = true;
+
+            this.ActiveControl = null;
+            this.Focus();
         }
     }
 }
